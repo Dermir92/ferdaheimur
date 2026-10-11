@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143e37">
+  <meta name="description" content="Finndu næstu utanlandsferð. Leitaðu eftir áfangastað, tímabili og ferðaflokki og skoðaðu ferðina hjá ferðaskrifstofunni.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ferðaheimur — Næsta ferð byrjar hér</title>
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="stylesheet" href="/src/styles.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#ferdir">Fara í ferðayfirlit</a>
+  <header class="header">
+    <div class="header-inner shell">
+      <a class="brand" href="/" aria-label="Ferðaheimur, forsíða"><span class="brand-mark" aria-hidden="true">✳</span> ferðaheimur<span class="brand-dot">.</span></a>
+      <nav aria-label="Aðalvalmynd"><a class="nav-active" href="#ferdir">Finndu ferð</a><a href="#afangastadir">Áfangastaðir</a><button type="button" class="text-button" data-open-info>Svona virkar þetta <span aria-hidden="true">↗</span></button></nav>
+      <span class="header-note"><span class="tiny-spark" aria-hidden="true">✦</span> Heimurinn bíður þín</span>
+    </div>
+  </header>
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <img class="hero-image" src="/public/images/tenerife.png" alt="Myndskreyting innblásin af ströndum Tenerife" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-copy"><p class="eyebrow"><span aria-hidden="true">✦</span> EIN LEIT. FLEIRI MÖGULEIKAR.</p><h1 id="hero-title">Minna leita.<br>Meira <em>ferðast.</em></h1><p class="hero-purpose">Ferðir frá íslenskum ferðaskrifstofum á einum stað</p><p class="hero-booking">Þú bókar hjá ferðaskrifstofunni.</p></div>
+      <span class="hero-location"><span data-icon="pin"></span> Innblástur frá Kanaríeyjum</span>
+      <form id="search-form" class="search-box" role="search" aria-label="Leita að ferð">
+        <label class="search-field destination-field" for="destination"><span class="field-icon" data-icon="pin"></span><span class="field-content"><span class="field-label" id="destination-label">Hvert viltu fara?</span><input type="search" name="q" id="destination" aria-labelledby="destination-label" placeholder="Áfangastaður eða land" autocomplete="off" list="destinations"></span></label>
+        <label class="search-field" for="period"><span class="field-icon" data-icon="calendar"></span><span class="field-content"><span class="field-label" id="period-label">Hvenær?</span><select name="period" id="period" aria-labelledby="period-label"><option value="">Öll tímabil</option></select></span></label>
+        <label class="search-field" for="category"><span class="field-icon" data-icon="compass"></span><span class="field-content"><span class="field-label" id="category-label">Hvernig ferð?</span><select name="category" id="category" aria-labelledby="category-label"><option value="">Allir ferðaflokkar</option></select></span></label>
+        <button class="button primary search-submit" type="submit"><span data-icon="search"></span> Finna ferð</button>
+      </form>
+      <datalist id="destinations"></datalist>
+    </section>
+    <div class="benefits shell"><span><span data-icon="globe"></span> Ferðir á einum stað</span><span><span data-icon="check-circle"></span> Bókað beint hjá ferðaskrifstofu</span><span><span data-icon="tag"></span> Skýrar verðforsendur</span></div>
+    <section class="travel-section shell" id="ferdir" aria-labelledby="travel-heading">
+      <div class="section-heading"><div><p class="eyebrow green">NÆSTA ÆVINTÝRI</p><h2 id="travel-heading" tabindex="-1">Hvert liggur leiðin?</h2><p class="section-description">Sól á ströndinni, ný borg eða eitthvað allt annað.</p></div><span class="section-flower" aria-hidden="true">✳</span></div>
+      <div class="category-tabs" role="group" aria-label="Ferðaflokkur"><button type="button" class="category-tab active" data-category=""><span data-icon="globe"></span> Allar ferðir</button></div>
+      <div class="filters-bar">
+        <button type="button" class="button filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="extra-filters"><span data-icon="sliders"></span> Síur <span id="filter-count" class="filter-count" hidden></span></button>
+        <div id="extra-filters" class="extra-filters">
+          <label class="compact-select" for="agency"><span class="sr-only" id="agency-label">Ferðaskrifstofa</span><select id="agency" name="agency" aria-labelledby="agency-label"><option value="">Allar ferðaskrifstofur</option></select></label>
+          <label class="compact-select" for="duration"><span class="sr-only" id="duration-label">Lengd ferðar í nóttum</span><select id="duration" name="duration" aria-labelledby="duration-label"><option value="">Allar ferðalengdir</option><option value="short">1–4 nætur</option><option value="week">5–9 nætur</option><option value="long">10 nætur eða fleiri</option></select></label>
+        </div>
+        <button id="clear-filters" type="button" class="text-button clear-button" hidden>Hreinsa síur <span aria-hidden="true">×</span></button>
+        <label class="sort-control"><span>Raða eftir:</span><select id="sort" name="sort" aria-label="Raða ferðum"><option value="departure">Næsta brottför</option><option value="price-asc">Lægsta verði</option><option value="price-desc">Hæsta verði</option></select></label>
+      </div>
+      <div id="active-filters" class="active-filters" aria-label="Virkar síur"></div>
+      <div class="result-summary"><p id="result-count" role="status" aria-live="polite">Sækjum ferðir…</p><span>Finndu ferð sem hentar þér</span></div>
+      <p class="comparison-notice" id="comparison-notice" hidden><span data-icon="info"></span><span>Verðröðun sýnir aðeins ferðir með verði í krónum á mann í tvíbýli og skýrum pakkaforsendum. <strong id="excluded-count"></strong> með ófullnægjandi verðforsendum eru undanskildar. Innifalin þjónusta getur verið ólík.</span></p>
+      <div id="trip-grid" class="trip-grid" aria-busy="true"></div>
+      <div id="empty-state" class="state-panel" hidden><span class="state-icon" data-icon="search"></span><h3>Engin ferð fannst í þetta sinn</h3><p id="empty-message">Engin ferð passar við öll leitarskilyrðin. Prófaðu víðara tímabil eða færri síur.</p><div class="state-actions"><button type="button" class="button primary" id="empty-broaden" hidden>Víkka leit</button><button type="button" class="button secondary" id="empty-reset">Sjá allar ferðir</button></div></div>
+      <div id="error-state" class="state-panel" hidden><span class="state-icon" data-icon="compass"></span><h3>Ferðirnar náðust ekki</h3><p>Það kom upp villa við að sækja ferðayfirlitið. Reyndu aftur eftir augnablik.</p><button type="button" class="button primary" id="retry">Reyna aftur</button></div>
+      <p class="price-disclaimer"><span data-icon="info"></span> Verð eru auglýst verð og geta breyst. Endanlegt verð og framboð staðfestir ferðaskrifstofan.</p>
+    </section>
+    <section class="destinations-section shell" id="afangastadir" aria-labelledby="destination-heading"><div class="destination-intro"><p class="eyebrow green">LÁTTU HUGANN REIKA</p><h2 id="destination-heading">Hvar viltu <br>vakna næst?</h2><p>Stundum þarf bara <br>smá innblástur.</p><span class="drawn-arrow" aria-hidden="true">⤳</span></div><div class="destination-tiles"><button type="button" class="destination-tile" data-destination="Tenerife"><img src="/public/images/tenerife.png" alt="" loading="lazy"><span><strong>Tenerife</strong><small>Sól og sjávarloft <span aria-hidden="true">↗</span></small></span></button><button type="button" class="destination-tile" data-destination="Prag"><img src="/public/images/prague.png" alt="" loading="lazy"><span><strong>Prag</strong><small>Saga við hvert fótmál <span aria-hidden="true">↗</span></small></span></button><button type="button" class="destination-tile" data-destination="Búdapest"><img src="/public/images/budapest.png" alt="" loading="lazy"><span><strong>Búdapest</strong><small>Ný sjónarhorn <span aria-hidden="true">↗</span></small></span></button></div></section>
+    <section class="how-section shell" aria-labelledby="how-heading"><div><span class="eyebrow green">FRÁ HUGMYND AÐ FERÐ</span><h2 id="how-heading">Þín ferð. Einfaldari leið.</h2></div><ol><li><span>01</span><div><h3>Finndu það sem heillar</h3><p>Leitaðu eftir stað, tíma og ferðastíl.</p></div></li><li><span>02</span><div><h3>Skoðaðu möguleikana</h3><p>Sjáðu dagsetningar, verð og hvað er innifalið.</p></div></li><li><span>03</span><div><h3>Haltu áfram hjá seljanda</h3><p>Skoðaðu ferðina og bókaðu hjá ferðaskrifstofunni.</p></div></li></ol></section>
+  </main>
+  <footer class="footer"><div class="shell footer-top"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✳</span> ferðaheimur<span class="brand-dot">.</span></a><span>Heimurinn er nær en þú heldur.</span><button type="button" class="text-button" data-open-info>Um Ferðaheim <span aria-hidden="true">↗</span></button></div><div class="shell footer-bottom"><span>© 2026 Ferðaheimur</span><span>Staðbundin frumgerð · Inniheldur könnunargögn og tilbúin dæmi.</span></div></footer>
+  <dialog id="info-dialog" aria-labelledby="info-title"><div class="dialog-top"><span class="eyebrow green">FERÐAHEIMUR</span><button type="button" class="icon-button" data-close-dialog aria-label="Loka"><span data-icon="close"></span></button></div><h2 id="info-title">Ein leit. Þín næsta ferð.</h2><p>Ferðaheimur hjálpar þér að finna utanlandsferðir frá ferðaskrifstofum og skoða hvað hentar þér.</p><p>Þegar þú velur „Skoða ferð“ opnast vefur ferðaskrifstofunnar í nýjum flipa. Þar færðu nánari upplýsingar, staðfestir verð og framboð og gengur frá bókun.</p><p>Auglýst verð getur verið miðað við ólíkan fjölda ferðalanga og mismunandi þjónustu. Lestu verðforsendur hverrar ferðar áður en þú berð saman.</p><button type="button" class="button primary" data-close-dialog>Fara að leita <span aria-hidden="true">→</span></button></dialog>
+  <noscript><div class="noscript">Virkja þarf JavaScript í vafranum til að nota ferðaleitina.</div></noscript>
+</body>
+</html>

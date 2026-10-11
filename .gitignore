@@ -1,0 +1,64 @@
+# Secrets and machine-specific settings
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+credentials*.json
+secrets*.json
+.npmrc
+.vscode/
+.idea/
+.codex/
+.agents/
+.claude/
+.local/
+*.local
+*.local.*
+
+# Dependencies, generated output and caches
+node_modules/
+dist/
+build/
+out/
+coverage/
+.cache/
+.npm/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# Temporary files, raw captures and request logs
+tmp/
+temp/
+raw/
+captures/
+downloads/
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.har
+*.http
+*.cookies*
+cookies*.txt
+cookiejar*
+
+# Original local research archive and browser trace remain on this computer.
+# The canonical report and minimal source examples are committed under docs/.
+/ferdagogn-konnun.md
+/docs/ferdagogn-konnun-gagnasynishorn.json
+/docs/screenshots/ux-browser-evidence.json
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

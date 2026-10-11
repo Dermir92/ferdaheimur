@@ -1,0 +1,26 @@
+{
+  "surveyDate": "2026-10-11",
+  "reference": "docs/ferdagogn-konnun-synishorn.json",
+  "baendaferdir": {
+    "name": "Vorgleði í Prag & Brno", "country": "Tékkland", "departure": "2027-05-03", "return": "2027-05-10", "duration_days": 8,
+    "price_isk": 329900, "single_supplement_isk": 86900,
+    "included": ["Flug og skattar", "Gisting og morgunmatur", "Íslensk fararstjórn", "Skipulagðar rútuferðir", "Hluti annarra máltíða"],
+    "source_url": "https://www.baendaferdir.is/baendaferdir/detail/2612/vorgledi-i-prag-brno",
+    "retrieved_at": "2026-10-11T00:24:20.802238+00:00"
+  },
+  "aventura_city": {
+    "tour": { "tourId": "budapest", "title": "Budapest", "info1": "Íslensk fararstjórn", "buttonUrl": "https://aventura.is/is/budapest1" },
+    "departure": { "tourId": "budapest", "startDate": "2026-10-22T00:00:00.000Z", "endDate": "2026-10-25T00:00:00.000Z", "availability": "available", "bookingUrl": "https://aventura.is/is/find/borgarferdir-leigu#cfr=370&ds=443&d=2026-09-30&df=2026-10-22&dt=2026-10-22&nf=3&nt=3&rms%5B%5D=2.0.&cc%5B%5D=0" },
+    "source_url": "https://sftp.aventura.is/files/city-break/borgarferdir.json", "retrieved_at": "2026-10-11T00:24:43.701558+00:00"
+  },
+  "aventura_offer": {
+    "raw_fields": { "name": "Coral Teide Mar", "dest": "Tenerife", "date_from": "2026-10-13", "date_to": "2026-10-20", "nights": "7", "board": "Aðeins herbergi", "accommodation_name": "2 Adults", "price_num": "247200", "currency": "", "pax": "", "adults": "", "kids": "", "hotel_search_url": "https://aventura.is/is/hotel/coral-teide-mar?ssfid=41#cfr=370&ds=5&df=2026-10-13&dt=2026-10-13&nf=7&nt=7&rms%5B%5D=2.0.&cc%5B%5D=&search=async-package" },
+    "source_url": "https://sftp.aventura.is/files/last-minute/groups/kef_tenerife.json", "retrieved_at": "2026-10-11T00:26:34.122443+00:00"
+  },
+  "sumarferdir": {
+    "title": "TENERIFE FYRIR 2", "price_amount": 99900, "currency": "ISK", "nights": 7,
+    "included": ["Flug", "Hótel", "Taska"],
+    "search_link": "https://www.sumarferdir.is/packages/results.aspx?clp=BEA&destinationID=176137&packageType=packages&originID=182556&endDate=2026-10-21&paxs=20&accion=searchpackages&duration=8&startDate=2026-10-14",
+    "departure": "2026-10-14", "return": "2026-10-21", "source_url": "https://www.sumarferdir.is/", "retrieved_at": "2026-10-11T00:22:55.669806+00:00"
+  }
+}
